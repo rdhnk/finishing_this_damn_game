@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cditg3c8w3tps"]
+
+[ext_resource type="Script" uid="uid://bvvg82hsslgam" path="res://scripts/test_player.gd" id="1_e7mys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le5e8"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_e7mys")
+ACCELERATION = 150
+DEACCELERATION = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_le5e8")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dimkbfq5bvawp"
+path="res://.godot/imported/outpost1_marker.dialogue-7c7029d3ce774f9a7ea86ea99df7584d.tres"
+
+[deps]
+
+source_file="res://dialogues/outpost1_marker.dialogue"
+dest_files=["res://.godot/imported/outpost1_marker.dialogue-7c7029d3ce774f9a7ea86ea99df7584d.tres"]
+
+[params]
+
+defaults=true

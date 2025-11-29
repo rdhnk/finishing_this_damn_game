@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm857gwoabdn8"]
+
+[ext_resource type="Script" uid="uid://csxk15e8mafee" path="res://scripts/coin.gd" id="1_i64fm"]
+[ext_resource type="Texture2D" uid="uid://dywc7t2qjncya" path="res://assets/coin.png" id="1_rwqht"]
+[ext_resource type="AudioStream" uid="uid://tgbkflf3mt7n" path="res://assets/audio/coin3.ogg" id="3_11l1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i64fm"]
+size = Vector2(10, 10)
+
+[node name="coin" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_i64fm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rwqht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i64fm")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_11l1o")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

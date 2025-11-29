@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgyv72i0yk4el"]
+
+[ext_resource type="Texture2D" uid="uid://bbp7kp84y5kvy" path="res://assets/map_signs.png" id="1_plr7k"]
+[ext_resource type="Script" uid="uid://bw5qr0rij6uij" path="res://scenes/map_sign.gd" id="2_3l00g"]
+[ext_resource type="PackedScene" uid="uid://bhcucyqh5f3px" path="res://scenes/chat_zone.tscn" id="3_nsdst"]
+[ext_resource type="Texture2D" uid="uid://chfl0rmwh5aku" path="res://assets/map_lowres.png" id="3_plr7k"]
+[ext_resource type="Script" uid="uid://dkt12qdj10o6r" path="res://scenes/map_zone.gd" id="4_plr7k"]
+
+[node name="MapSign" type="Sprite2D"]
+visibility_layer = 2
+position = Vector2(0, -4)
+texture = ExtResource("1_plr7k")
+script = ExtResource("2_3l00g")
+
+[node name="MapZone" parent="." instance=ExtResource("3_nsdst")]
+position = Vector2(0, -2)
+script = ExtResource("4_plr7k")
+
+[node name="MapLowres" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(-2.27374e-13, -7)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_plr7k")
+
+[editable path="MapZone"]

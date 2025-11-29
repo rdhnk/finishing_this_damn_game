@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bgfocykb4irmf"
+path="res://.godot/imported/conway1.dialogue-b6761ffc15175b7195b448af5f2147a4.tres"
+
+[deps]
+
+source_file="res://dialogues/conway1.dialogue"
+dest_files=["res://.godot/imported/conway1.dialogue-b6761ffc15175b7195b448af5f2147a4.tres"]
+
+[params]
+
+defaults=true

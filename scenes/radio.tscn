@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://xiyxnp8pmfy"]
+
+[ext_resource type="Texture2D" uid="uid://dw5n282t0ngoj" path="res://assets/radio.png" id="1_ldjbc"]
+[ext_resource type="Texture2D" uid="uid://diak06mv0naa5" path="res://assets/music_note.png" id="2_7h80l"]
+
+[sub_resource type="Animation" id="Animation_3mpwk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.366519]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, -15)]
+}
+
+[sub_resource type="Animation" id="Animation_4b7o3"]
+resource_name = "music_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [-0.366519, 0.439823, -0.366519]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-5, -15), Vector2(6, -15), Vector2(-5, -15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hhhqh"]
+_data = {
+&"RESET": SubResource("Animation_3mpwk"),
+&"music_animation": SubResource("Animation_4b7o3")
+}
+
+[node name="Radio" type="Sprite2D"]
+texture = ExtResource("1_ldjbc")
+
+[node name="MusicNote" type="Sprite2D" parent="."]
+position = Vector2(-5, -15)
+rotation = -0.366519
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7h80l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MusicNote"]
+libraries = {
+&"": SubResource("AnimationLibrary_hhhqh")
+}
+autoplay = "music_animation"

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bpp26cseuaqcu"
+path="res://.godot/imported/outpost1_sign.dialogue-b957694859b14c4dfbab91db5d895be8.tres"
+
+[deps]
+
+source_file="res://dialogues/outpost1_sign.dialogue"
+dest_files=["res://.godot/imported/outpost1_sign.dialogue-b957694859b14c4dfbab91db5d895be8.tres"]
+
+[params]
+
+defaults=true

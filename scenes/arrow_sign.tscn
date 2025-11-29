@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7g7ku4befm0f"]
+
+[ext_resource type="Texture2D" uid="uid://bvc7sfi1wj46d" path="res://assets/arrow_pole.png" id="1_gpnvg"]
+[ext_resource type="Texture2D" uid="uid://dqph0j8a5t8ud" path="res://assets/arrow_sign.png" id="2_gobo4"]
+
+[node name="arrow_sign" type="Node2D"]
+
+[node name="ArrowPole" type="Sprite2D" parent="."]
+texture = ExtResource("1_gpnvg")
+
+[node name="ArrowSign" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("2_gobo4")

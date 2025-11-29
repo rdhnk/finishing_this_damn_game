@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d0odqukby1xee"
+path="res://.godot/imported/hardy1.dialogue-9107819de6c5659595985db74a6213ba.tres"
+
+[deps]
+
+source_file="res://dialogues/hardy1.dialogue"
+dest_files=["res://.godot/imported/hardy1.dialogue-9107819de6c5659595985db74a6213ba.tres"]
+
+[params]
+
+defaults=true

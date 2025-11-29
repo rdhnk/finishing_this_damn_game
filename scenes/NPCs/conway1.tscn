@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://dc7rlb562eyi1"]
+
+[ext_resource type="Texture2D" uid="uid://b4k361pk6xa2f" path="res://assets/NPC/conway.png" id="1_8b836"]
+[ext_resource type="PackedScene" uid="uid://bhcucyqh5f3px" path="res://scenes/chat_zone.tscn" id="3_ebmmq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwyr1"]
+atlas = ExtResource("1_8b836")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igs3y"]
+atlas = ExtResource("1_8b836")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebmmq"]
+atlas = ExtResource("1_8b836")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0btkp"]
+atlas = ExtResource("1_8b836")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8b836"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwyr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igs3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebmmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0btkp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_uwyr1"]
+script/source = "extends AnimatedSprite2D
+
+@onready var player := get_tree().current_scene.get_node(\"player\") # get player from tree
+var resource = load(\"res://dialogues/conway1.dialogue\")
+
+func dialogue_logic():
+	if player.dialogue_conway == 0:
+		DialogueManager.show_dialogue_balloon(resource, \"start\")
+		if player.climb_boots:
+			player.dialogue_conway = 2
+		else:
+			player.dialogue_conway = 1
+	elif player.dialogue_conway == 1:
+		if player.climb_boots:
+			DialogueManager.show_dialogue_balloon(resource, \"yeaxe\")
+			player.dialogue_conway = 2
+		else:
+			DialogueManager.show_dialogue_balloon(resource, \"noaxe\")
+	elif player.dialogue_conway == 2:
+		DialogueManager.show_dialogue_balloon(resource, \"reason\")
+		player.dialogue_conway = 3
+	else:
+		DialogueManager.show_dialogue_balloon(resource, \"endloop\")
+"
+
+[node name="conway1" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_8b836")
+autoplay = "default"
+frame_progress = 0.25016
+script = SubResource("GDScript_uwyr1")
+
+[node name="ChatZone" parent="." instance=ExtResource("3_ebmmq")]
+
+[editable path="ChatZone"]

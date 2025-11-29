@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvn13r32r0e1p"]
+
+[ext_resource type="Script" uid="uid://dptnfmqwytnvf" path="res://scripts/dialogue.gd" id="1_3n4vj"]
+[ext_resource type="Texture2D" uid="uid://bhryx0fmg3tk2" path="res://assets/NPC/dialogue_balloon.png" id="1_jwyou"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3n4vj")
+d_file = "res://dialogues/hardy1.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 32.0
+offset_bottom = -5.0
+texture = ExtResource("1_jwyou")
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 195.0
+offset_bottom = 28.0
+scale = Vector2(0.3, 0.3)
+text = "Name:"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 176.0
+offset_bottom = 76.0
+scale = Vector2(0.3, 0.3)
+text = "yadda yadda"

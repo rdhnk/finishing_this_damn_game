@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvtd6qmi5hap0"]
+
+[ext_resource type="Script" uid="uid://cnecn7dy1ytxi" path="res://scripts/letters.gd" id="1_1mko2"]
+[ext_resource type="Texture2D" uid="uid://cqcj61dv44fb0" path="res://assets/letters.png" id="2_1mko2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i64fm"]
+size = Vector2(20, 18)
+
+[node name="letter" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_1mko2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1mko2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i64fm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

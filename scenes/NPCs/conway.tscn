@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://6oqxcvb6m2h"]
+
+[ext_resource type="Script" uid="uid://bnj1cu3rs35xm" path="res://scenes/NPCs/conway.gd" id="1_bmshy"]
+[ext_resource type="Texture2D" uid="uid://b4k361pk6xa2f" path="res://assets/NPC/conway.png" id="1_ksvkh"]
+[ext_resource type="PackedScene" uid="uid://ccoujeb26t76l" path="res://scenes/dialogue_mark.tscn" id="3_p8qa2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_007oy"]
+atlas = ExtResource("1_ksvkh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mdng"]
+atlas = ExtResource("1_ksvkh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2yys"]
+atlas = ExtResource("1_ksvkh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koojn"]
+atlas = ExtResource("1_ksvkh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_av2kk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_007oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mdng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2yys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koojn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4nmi"]
+size = Vector2(43.5, 18)
+
+[node name="conway" type="Node2D"]
+script = ExtResource("1_bmshy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_av2kk")
+autoplay = "default"
+frame_progress = 0.506849
+
+[node name="chatzone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatzone"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_v4nmi")
+
+[node name="dialogue_mark" parent="chatzone" instance=ExtResource("3_p8qa2")]
+visible = false
+position = Vector2(0, -15)
+
+[connection signal="body_entered" from="chatzone" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="chatzone" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://b68b1uuj4kepb"]
+
+[ext_resource type="Script" uid="uid://diqlvtfb2ktfq" path="res://scenes/NPCs/shop_gauss.gd" id="1_fi3ip"]
+[ext_resource type="Texture2D" uid="uid://cd7knu8bqxo7a" path="res://assets/NPC/shop_keeper.png" id="2_fi3ip"]
+[ext_resource type="PackedScene" uid="uid://gl75nxj8cfrd" path="res://scenes/NPCs/interact_node.tscn" id="3_p66hs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evbxy"]
+atlas = ExtResource("2_fi3ip")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax8da"]
+atlas = ExtResource("2_fi3ip")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_daqgs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evbxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax8da")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="shop_gauss" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_daqgs")
+autoplay = "default"
+script = ExtResource("1_fi3ip")
+
+[node name="interact_node" parent="." instance=ExtResource("3_p66hs")]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0cu1tkc10xot"]
+
+[ext_resource type="Texture2D" uid="uid://b1s7gdkm31mvo" path="res://assets/outpost_signs.png" id="1_pogio"]
+[ext_resource type="PackedScene" uid="uid://bhcucyqh5f3px" path="res://scenes/chat_zone.tscn" id="2_0j48e"]
+
+[sub_resource type="GDScript" id="GDScript_0j48e"]
+script/source = "extends Sprite2D
+
+var resource = load(\"res://dialogues/outpost1_sign.dialogue\")
+var npc_name = self.name
+
+func dialogue_logic():
+	DialogueManager.show_dialogue_balloon(resource, \"start\")
+"
+
+[node name="OutpostSigns" type="Sprite2D"]
+texture = ExtResource("1_pogio")
+script = SubResource("GDScript_0j48e")
+
+[node name="ChatZone" parent="." instance=ExtResource("2_0j48e")]

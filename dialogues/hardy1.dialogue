@@ -1,0 +1,50 @@
+~ start
+Hardy: Good morning, Fibo.
+Hardy: I hope that the test wasn't so hard, [wait=0.5]hahaha.
+Hardy: Ah come on, it wasn't that threathening.
+Hardy: You're too hotheaded to die anyway.
+Hardy: And if you're going to be serious about it, then I have too, as well.
+Hardy: Well, the climb will not be easy.
+Hardy: But, I believe it will not deter you.
+Hardy: I can see it in your eyes, Fibo. We both know it worth a thing.
+Hardy: And showing up is already half the battle after all!
+Hardy: Oh! I almost forgot.
+Hardy: You should talk to my friend, Gauss.
+Hardy: Think he's in the first outpost.
+Hardy: He will prepare an important gear for you.
+Hardy: Best of luck, kiddo.
+=> END
+
+~ start2
+Hardy: Mt Ramanujan isn't going to be easy.
+Hardy: Never gets easier, in fact.
+Hardy: I still remember my time climbing it.
+Hardy: The hardship. The pain. The satisfaction.
+Hardy: But, [wait=1]those were in the past.
+Hardy: Also, nowadays the family is more important.
+Hardy: Anywho, you should get along.
+=> END
+
+~ start3
+Hardy: I see that you're wearing that orange beanie cap.
+Hardy: Why yes, it's our family's pride.
+Hardy: It's a symbol of fearlessness for the Hardy's.
+Hardy: And keeps your head warm too!
+Hardy: Very important piece of gear, I tell you what.
+Hardy: Don't lose it when you're back, kiddo.
+=> END
+
+~ start4
+Hardy: I need to remind you again, Fibo.
+Hardy: Reaching the summit is important and all,
+Hardy: but meeting and knowing other people is also crucial.
+Hardy: Remember: you never know who they are and how do they do today.
+Hardy: So, always be polite and kind towards everyone, and don't forget to introduce yourself.
+Hardy: Being polite will make everyone's mood for the better,
+Hardy: and many problems can be solved by asking about their day.
+Hardy: Anyway, you should move along.
+=> END
+
+~ endloop
+Hardy: Come on now, move along.
+=> END

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b22onclih6om0"]
+
+[ext_resource type="Script" uid="uid://bh104cqv1opb2" path="res://scripts/npc.gd" id="1_cxq6l"]
+[ext_resource type="PackedScene" uid="uid://bvn13r32r0e1p" path="res://scenes/dialogue_old_and_busted.tscn" id="2_d811m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abqhh"]
+radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv78h"]
+radius = 16.1245
+
+[node name="npc" type="Node2D"]
+script = ExtResource("1_cxq6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_abqhh")
+
+[node name="chat_detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection"]
+shape = SubResource("CircleShape2D_rv78h")
+
+[node name="Dialogue" parent="." instance=ExtResource("2_d811m")]
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 39.0
+offset_bottom = 34.0
+
+[connection signal="body_entered" from="chat_detection" to="." method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="chat_detection" to="." method="_on_chat_detection_body_exited"]
+[connection signal="dialogue_finished" from="Dialogue" to="." method="_on_control_dialogue_finished"]

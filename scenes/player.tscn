@@ -1,0 +1,236 @@
+[gd_scene load_steps=26 format=3 uid="uid://cxp8t622278qo"]
+
+[ext_resource type="Script" uid="uid://bn2yjlh0geano" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bhoy80o7lrw33" path="res://assets/fibo_player.png" id="3_fjrip"]
+[ext_resource type="Script" uid="uid://cbincn6bj51pc" path="res://scripts/grapple_controller.gd" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bucbbsjnto5og" path="res://assets/pointer.png" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://csui7lkq2h0sx" path="res://assets/audio/jump1.ogg" id="5_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://h5u1atjunwo6" path="res://assets/audio/jump5.ogg" id="6_fjrip"]
+[ext_resource type="AudioStream" uid="uid://codgptk8mc0lo" path="res://assets/audio/run_timing.ogg" id="7_fjrip"]
+[ext_resource type="AudioStream" uid="uid://b1sxa0jpy0qpa" path="res://assets/audio/lose3.ogg" id="8_smehm"]
+[ext_resource type="Texture2D" uid="uid://dfcw3oxys2yf4" path="res://assets/climbing_boots.png" id="9_ur7pv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(35, 18, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(52, 18, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(35, 35, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(52, 35, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(1, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(18, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(18, 18, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(1, 18, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(35, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(52, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(18, 35, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(1, 35, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(1, 52, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("3_fjrip")
+region = Rect2(18, 52, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}],
+"loop": true,
+"name": &"fall_panic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8ls1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm1y")
+}],
+"loop": true,
+"name": &"grapple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ej7")
+}],
+"loop": true,
+"name": &"sit_chair",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}],
+"loop": true,
+"name": &"sit_ground",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fulsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5pv")
+}],
+"loop": true,
+"name": &"wall_slide",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(12, 8)
+
+[node name="player" type="CharacterBody2D"]
+z_index = 5
+collision_layer = 2
+script = ExtResource("1_g2els")
+
+[node name="player_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_qhqgy")
+animation = &"wall_slide"
+autoplay = "idle"
+frame_progress = 0.218298
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="WallChecking" type="Node2D" parent="."]
+
+[node name="WallCheckLeft" type="RayCast2D" parent="WallChecking"]
+target_position = Vector2(-8, 0)
+
+[node name="WallCheckRight" type="RayCast2D" parent="WallChecking"]
+target_position = Vector2(8, 0)
+
+[node name="GrappleController" type="Node2D" parent="."]
+script = ExtResource("3_qhqgy")
+rest_length = 3.0
+stiffness = 50.0
+damping = 1.0
+
+[node name="RayCast2D" type="RayCast2D" parent="GrappleController"]
+target_position = Vector2(0, -30)
+
+[node name="PointSprite" type="Sprite2D" parent="GrappleController/RayCast2D"]
+position = Vector2(0, 5)
+texture = ExtResource("4_dqkch")
+offset = Vector2(0, -35)
+
+[node name="Line2D" type="Line2D" parent="GrappleController"]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 1.0
+
+[node name="DeathTime" type="Timer" parent="."]
+one_shot = true
+
+[node name="RunningTime" type="Timer" parent="."]
+autostart = true
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="sfx_jump" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("5_tuyoq")
+bus = &"SFX"
+
+[node name="sfx_fall" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("6_fjrip")
+bus = &"SFX"
+
+[node name="sfx_run" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("7_fjrip")
+volume_db = -7.0
+parameters/looping = false
+
+[node name="sfx_die" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("8_smehm")
+bus = &"SFX"
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="ClimbingBoots" type="Sprite2D" parent="Items"]
+visible = false
+position = Vector2(0, -12)
+texture = ExtResource("9_ur7pv")
+
+[connection signal="timeout" from="DeathTime" to="." method="_on_death_time_timeout"]

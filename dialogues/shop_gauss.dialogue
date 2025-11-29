@@ -1,0 +1,53 @@
+~ start
+???: Howdy! Welcome to the [color=light_sky_blue]first outpost[/color] of Mt Ramanujan!
+???: My name is [color=orange]Gauss[/color], and I'm the outpost keeper of this outpost!
+Gauss: Say, are you here to climb this famous mountain?
+Gauss: Well, in that case, you need trusty tools!
+Gauss: Such as, this amazing...
+set player.climbing_boots_sprite.visible = true
+Gauss: [color=gold]Climbing boots[/color]!
+set player.climb_boots = true
+set player.climbing_boots_sprite.visible = false
+Gauss: With this climbing boots, you can now stick and slide on a wall!
+Gauss: Or, you can do a walljump to reach higher grounds!
+Gauss: Very handy for climbing this stunning mountain!
+Gauss: But wait a minute! You look familar!
+Gauss: You must be Hardy's son!
+Gauss: Give him my regards!
+Gauss: And happy trails! 
+=> END
+
+~ start2
+Gauss: Mt Ramanujan is an amazing mountain!
+Gauss: Its height is 4104 meters!
+Gauss: It's surrounded by deep forest in the west, and an ocean to the east!
+Gauss: It's being preserved by Ramanujan Rescue Service! That's us!
+Gauss: It's visited by hundreds of climbers every years!
+Gauss: I hope the climbers doesn't die during the climb!
+Gauss: Otherwise, they will not see the beauty of Ramanujan summit!
+=> END
+
+~ start3
+Gauss: Why am I shouting?
+Gauss: I'm not shouting! I'm just very enthusiastic!
+Gauss: Do I get tired from it?
+Gauss: As long I'm near Mt Ramanujan, I will not get tired!
+Gauss: Optimism is a good medicine for one's soul!
+Gauss: Many says that this mountain can heal your heart and mind!
+Gauss: That's why many people visits Mt Ramanujan!
+=> END
+
+~ bonus_item
+Gauss: Hey, what's that!
+Gauss: Oh you got yourself an ancient coin!
+Gauss: They say that it was made by Srinivasan people! 
+Gauss: Since you have one, I have an obligation to give you this!
+Gauss: A [color=gold]climbing boots[/color]!
+Gauss: With this, you will slide slower while on a wall!
+Gauss: Very handy when falling from this stunning mountain!
+Gauss: Hope that you find more coins soon!
+=> END
+
+~ endloop
+Gauss: Happy trails!
+=> END

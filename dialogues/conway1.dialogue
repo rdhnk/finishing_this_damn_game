@@ -1,0 +1,37 @@
+~ start
+???: Oh, hello.
+???: I'm just pondering this wall over here.
+???: Ack! Where are my manners!
+???: My name is [color=orange]Conway[/color], by the way. I'm here to climb this mountain.
+Conway: I assume that you're here to climb it too, yes?
+Conway: Well, we need climb this wall, but we cannot simply jump over it.
+Conway: What we need, is a [color=gold]climbing boots[/color].
+if !player.climb_boots:
+	=> noaxe
+else:
+	=> yeaxe
+=> END
+
+~ noaxe
+Conway: It seems you don't have a [color=gold]climbing boots[/color] yet.
+Conway: You need to talk to the man in charge of this [color=light_sky_blue]outpost[/color].
+Conway: He's on that little stand over there.
+Conway: Have a chat with him & he will give one for you!
+=> END
+
+~ yeaxe
+Conway: Oh! You already have it!
+Conway: Feel free to try it on that wall.
+Conway: With it, you can reach that platform above, and leap over the wall.
+=> END
+
+~ reason
+Conway: Oh me? I already got the boots.
+Conway: I just hanging out here, and no, not because I'm afraid or anything.
+Conway: I'm just... pondering about things...
+Conway: Anyway, I see you on the next outpost, yeah?
+=> END
+
+~ endloop
+Conway: I see you on the next outpost, yeah?
+=> END
