@@ -35,9 +35,9 @@ var wall_touching_left : bool = false
 var wall_touching_right : bool = false
 
 # item
-var climb_boots : bool = false # for wall slide & wall climb
+@export var climb_boots : bool = false # for wall slide & wall climb
 @onready var climbing_boots_sprite: Sprite2D = $Items/ClimbingBoots
-var grappling_hook : bool = false # for grappling hook
+@export var grappling_hook : bool = false # for grappling hook
 var quick_hook : bool = false
 
 # get grappling controller
@@ -54,10 +54,11 @@ var falldeath_threshold : float = 600.0
 var can_move : bool = true # whether player can move or not
 
 # Camera manipulation
-var down_pressed : bool = false
-var down_hold_time := 0.0
-var down_threshold := 0.6  # seconds
-var down_cam_y : float = 80
+var look_direction : float = 0.0
+var cam_pressed : bool = false
+var cam_hold_time := 0.0
+var cam_threshold := 0.6  # seconds
+var cam_y : float = 80
 var ori_cam_y : float = -20.0
 
 # Sound effects
@@ -223,16 +224,17 @@ func wall_jumping(climbboots : bool) -> void:
 			player_sprite.flip_h = !player_sprite.flip_h
 
 func look_down(delta):
-	if Input.is_action_pressed("move_down"):
-		down_hold_time += delta
-		if down_hold_time >= down_threshold:
-			if !down_pressed:
-				player_camera.position.y += down_cam_y
-				down_pressed = true
-	elif Input.is_action_just_released("move_down"):
-		down_hold_time = 0.0
+	if Input.is_action_pressed("look_up") or Input.is_action_pressed("look_down"):
+		look_direction = Input.get_axis("look_up", "look_down")
+		cam_hold_time += delta
+		if cam_hold_time >= cam_threshold:
+			if !cam_pressed:
+				player_camera.position.y += look_direction * cam_y
+				cam_pressed = true
+	elif Input.is_action_just_released("look_up") or Input.is_action_just_released("look_down"):
+		cam_hold_time = 0.0
 		player_camera.position.y = ori_cam_y
-		down_pressed = false
+		cam_pressed = false
 
 #func _on_death_time_timeout() -> void:
 	##alive = true
