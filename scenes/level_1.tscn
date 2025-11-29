@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://b5wu2qlscorw"]
+[gd_scene load_steps=61 format=3 uid="uid://b5wu2qlscorw"]
 
 [ext_resource type="Texture2D" uid="uid://bio23n3d2l4sy" path="res://assets/colored-transparent_packed.png" id="1_bswci"]
 [ext_resource type="Texture2D" uid="uid://bkploirvqhk4m" path="res://assets/skies.png" id="2_fcfvj"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://cvdj4of8llogq" path="res://assets/audio/AudioPapkin - forest-atmosphere-localization-poland.mp3" id="10_isj1j"]
 [ext_resource type="PackedScene" uid="uid://dvtd6qmi5hap0" path="res://scenes/letters.tscn" id="11_2os1m"]
 [ext_resource type="AudioStream" uid="uid://nx0if3ick8it" path="res://assets/audio/belski - cold-wind-sound-effect-127448.mp3" id="11_so66j"]
+[ext_resource type="AudioStream" uid="uid://737cn7skxkvr" path="res://assets/audio/FASSounds - lofi-study-calm-peaceful-chill-hop-112191.mp3" id="11_wbtxt"]
 [ext_resource type="Texture2D" uid="uid://b3r8ugkljqo6y" path="res://assets/camp.png" id="14_6dial"]
 [ext_resource type="PackedScene" uid="uid://b68b1uuj4kepb" path="res://scenes/NPCs/shop_gauss.tscn" id="14_7nomh"]
 [ext_resource type="Texture2D" uid="uid://dfsvvxy1e73e7" path="res://assets/camp2.png" id="15_7nomh"]
@@ -1763,6 +1764,9 @@ size = Vector2(10.5, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5akn"]
 size = Vector2(26, 20)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x2fux"]
+load_path = "res://.godot/imported/radio.png-436755cfa48ec1e1b2577687abc2a2e9.ctex"
+
 [node name="level_1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1962,12 +1966,24 @@ shape = SubResource("RectangleShape2D_d5akn")
 
 [node name="sounds" type="Node2D" parent="."]
 
-[node name="Radio" parent="sounds" instance=ExtResource("19_2cbcq")]
+[node name="Radio_outpost1" parent="sounds" instance=ExtResource("19_2cbcq")]
 position = Vector2(1329, 167)
 
-[node name="radio_outpost1" type="AudioStreamPlayer2D" parent="sounds/Radio"]
+[node name="Sound_outpost1" type="AudioStreamPlayer2D" parent="sounds/Radio_outpost1"]
 position = Vector2(0, 1)
 stream = ExtResource("10_2y5yt")
+autoplay = true
+max_distance = 450.0
+attenuation = 1.51572
+bus = &"Music"
+
+[node name="Radio_outpost2" parent="sounds" instance=ExtResource("19_2cbcq")]
+position = Vector2(6081, -361)
+texture = SubResource("CompressedTexture2D_x2fux")
+
+[node name="Sound_outpost2" type="AudioStreamPlayer2D" parent="sounds/Radio_outpost2"]
+position = Vector2(0, 1)
+stream = ExtResource("11_wbtxt")
 autoplay = true
 max_distance = 450.0
 attenuation = 1.51572
@@ -1982,10 +1998,11 @@ attenuation = 2.2974
 bus = &"SFX"
 
 [node name="Westside" type="AudioStreamPlayer2D" parent="sounds"]
-position = Vector2(3163, -1505)
+position = Vector2(2552, -1565)
 stream = ExtResource("11_so66j")
 volume_db = 14.423
 autoplay = true
+max_distance = 1800.0
 attenuation = 1.10957
 
 [node name="BGM" type="AudioStreamPlayer" parent="sounds"]
@@ -2092,6 +2109,14 @@ texture = ExtResource("14_6dial")
 
 [node name="Camp3" type="Sprite2D" parent="level_objects/Outpost_1W"]
 position = Vector2(1303, 163)
+texture = ExtResource("15_7nomh")
+
+[node name="Camp4" type="Sprite2D" parent="level_objects/Outpost_1W"]
+position = Vector2(6019, -366)
+texture = ExtResource("14_6dial")
+
+[node name="Camp5" type="Sprite2D" parent="level_objects/Outpost_1W"]
+position = Vector2(6054, -366)
 texture = ExtResource("15_7nomh")
 
 [node name="Clouds" type="Node2D" parent="level_objects"]
