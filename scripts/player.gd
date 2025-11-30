@@ -34,17 +34,23 @@ var wall_dir : float = 0  # -1 = left wall, +1 = right wall
 var wall_touching_left : bool = false
 var wall_touching_right : bool = false
 
-# item
+# items
 @export var climb_boots : bool = false # for wall slide & wall climb
 @onready var climbing_boots_sprite: Sprite2D = $Items/ClimbingBoots
 @export var grappling_hook : bool = false # for grappling hook
 var quick_hook : bool = false
+@export var parachute : bool = false # for parachute
 
 # get grappling controller
 @onready var grapple_controller: Node2D = $GrappleController
 # for checking walls, using Raycast
 @onready var wall_check_left: RayCast2D = $WallChecking/WallCheckLeft
 @onready var wall_check_right: RayCast2D = $WallChecking/WallCheckRight
+
+# parachute
+var is_parachuting : bool = false
+@onready var sprite_parachute: Sprite2D = $Items/Parachute
+
 
 # Health & move status
 var alive : bool = true # as in, not dead
@@ -105,8 +111,8 @@ func _physics_process(delta: float) -> void:
 				velocity.x = lerp(velocity.x, 0.0, DECELERATION)
 				player_sprite.play("idle")
 		
-		# move camera down
-		look_down(delta)
+		# move camera up or down
+		cam_look(delta)
 		
 		# Record jump input
 		if Input.is_action_just_pressed("move_jump") and alive:
@@ -147,7 +153,7 @@ func _physics_process(delta: float) -> void:
 				if !sfx_fall_played:	# Play the panic SFX just ONCE
 					sfx_fall_played = true
 					sfx_fall.play()
-			if to_die and (is_wall_sliding or grapple_controller.launched): # Save yourself by wall sliding or grappling
+			if to_die and (is_wall_sliding or grapple_controller.launched or is_parachuting): # Save yourself by wall sliding or grappling
 				to_die = false
 		else:
 			velocity.y = 0.0
@@ -178,6 +184,8 @@ func _physics_process(delta: float) -> void:
 		# Variable jump height
 		if Input.is_action_just_released("move_jump") and velocity.y < 0.0:
 			velocity.y *= JUMP_CUT_MULTIPLIER
+		# Parachuting
+		activate_parachute()
 		
 		move_and_slide()
 	
@@ -222,8 +230,21 @@ func wall_jumping(climbboots : bool) -> void:
 			jump_buffer_timer = 0.0
 			wall_stick_counter = WALL_STICK_TIME # So horizontal input turned off temporary after wall jump
 			player_sprite.flip_h = !player_sprite.flip_h
+			
+func activate_parachute():
+	if !parachute:
+		pass
+	else:
+		if Input.is_action_pressed("parachute") and !is_on_floor() and !grapple_controller.launched:
+			is_parachuting = true
+			player_sprite.play("grapple")
+			sprite_parachute.visible = true
+			velocity.y = lerp(velocity.y, 20.0, 0.3)
+		else:
+			is_parachuting = false
+			sprite_parachute.visible = false
 
-func look_down(delta):
+func cam_look(delta):
 	if Input.is_action_pressed("look_up") or Input.is_action_pressed("look_down"):
 		look_direction = Input.get_axis("look_up", "look_down")
 		cam_hold_time += delta
