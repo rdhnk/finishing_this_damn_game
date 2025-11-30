@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bt46uysmua022"
+path="res://.godot/imported/Lofi Chill 3 -DELOSound.mp3-14b3c75bbf96708c117a884f5fff2169.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Music/Lofi Chill 3 -DELOSound.mp3"
+dest_files=["res://.godot/imported/Lofi Chill 3 -DELOSound.mp3-14b3c75bbf96708c117a884f5fff2169.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
