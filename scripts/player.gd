@@ -40,6 +40,7 @@ var wall_touching_right : bool = false
 @export var grappling_hook : bool = false # for grappling hook
 var quick_hook : bool = false
 @export var parachute : bool = false # for parachute
+@onready var sfx_get_item: AudioStreamPlayer2D = $sfx/sfx_get_item
 
 # get grappling controller
 @onready var grapple_controller: Node2D = $GrappleController
@@ -50,7 +51,6 @@ var quick_hook : bool = false
 # parachute
 var is_parachuting : bool = false
 @onready var sprite_parachute: Sprite2D = $Items/Parachute
-
 
 # Health & move status
 var alive : bool = true # as in, not dead

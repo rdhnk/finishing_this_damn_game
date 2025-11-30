@@ -5,6 +5,7 @@ Gauss: Say, are you here to climb this famous mountain?
 Gauss: Well, in that case, you need trusty tools!
 Gauss: Such as, this amazing...
 set player.climbing_boots_sprite.visible = true
+set player.sfx_get_item.play()
 Gauss: [color=gold]Climbing boots[/color]!
 set player.climb_boots = true
 set player.climbing_boots_sprite.visible = false
