@@ -14,7 +14,7 @@ var target: Vector2
 var mover = Vector2.ZERO
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	if player.grappling_hook:
 		# use mouse to aim
 		#ray.look_at(get_global_mouse_position())
