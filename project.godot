@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameStates="*res://scripts/game_states.gd"
+InputBuffer="*res://input_buffer.gd"
 
 [dialogue_manager]
 
