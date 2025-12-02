@@ -35,11 +35,11 @@ var wall_touching_left : bool = false
 var wall_touching_right : bool = false
 
 # items
-@export var climb_boots : bool = false # for wall slide & wall climb
+var climb_boots : bool = false # for wall slide & wall climb
 @onready var climbing_boots_sprite: Sprite2D = $Items/ClimbingBoots
-@export var grappling_hook : bool = false # for grappling hook
+var grappling_hook : bool = false # for grappling hook
 var quick_hook : bool = false
-@export var parachute : bool = false # for parachute
+var parachute : bool = false # for parachute
 @onready var sfx_get_item: AudioStreamPlayer2D = $sfx/sfx_get_item
 
 # get grappling controller
@@ -193,7 +193,6 @@ func _physics_process(delta: float) -> void:
 	
 func dying():
 	if !alive:
-		print("ded")
 		player_sprite.play("dead")
 		respawn_label.visible = true
 		#velocity = Vector2.ZERO
@@ -201,6 +200,7 @@ func dying():
 		if !sfx_die_played:	# Play the panic SFX just ONCE
 			sfx_die_played = true
 			sfx_die.play()
+			print("ded")
 		#if Input.is_anything_pressed(): # press any key to restart
 		if Input.is_action_just_pressed("interact"): # press E/X to restart
 			set_global_position(respawn_position)

@@ -25,6 +25,7 @@ func _physics_process(delta):
 		ray.global_rotation_degrees = lerp(ray.global_rotation_degrees, rad_to_deg(mover.angle()) - (-45.0 * player.direction),0.3)
 		
 		point.visible = true
+		#print("Grappling: ",player.grappling_hook, ", Point: ",point.visible)
 		# Change pointer color if it's colliding
 		if ray.is_colliding():
 			point.self_modulate = Color(0, 1, 0, 1)

@@ -166,8 +166,6 @@ size = Vector2(12, 8)
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_g2els")
-climb_boots = true
-parachute = true
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
@@ -198,6 +196,7 @@ target_position = Vector2(0, -30)
 collision_mask = 5
 
 [node name="PointSprite" type="Sprite2D" parent="GrappleController/RayCast2D"]
+visible = false
 position = Vector2(0, 5)
 texture = ExtResource("4_dqkch")
 offset = Vector2(0, -35)
