@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2uyfg7wqiaxk"]
+[gd_scene load_steps=7 format=3 uid="uid://c2uyfg7wqiaxk"]
 
 [ext_resource type="Texture2D" uid="uid://dcufkppsrsyla" path="res://assets/NPC/hardy.png" id="1_v4nmi"]
 [ext_resource type="Script" uid="uid://dwdtl0oe4x1of" path="res://scenes/NPCs/hardy.gd" id="1_x1meh"]
-[ext_resource type="PackedScene" uid="uid://ccoujeb26t76l" path="res://scenes/dialogue_mark.tscn" id="3_b46kh"]
+[ext_resource type="PackedScene" uid="uid://bhcucyqh5f3px" path="res://scenes/chat_zone.tscn" id="3_b46kh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmshy"]
 atlas = ExtResource("1_v4nmi")
@@ -26,27 +26,11 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4nmi"]
-size = Vector2(43.5, 18)
-
-[node name="hardy" type="Node2D"]
-script = ExtResource("1_x1meh")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="hardy" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_av2kk")
 autoplay = "default"
 frame_progress = 0.169871
+script = ExtResource("1_x1meh")
 
-[node name="chatzone" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chatzone"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_v4nmi")
-
-[node name="dialogue_mark" parent="chatzone" instance=ExtResource("3_b46kh")]
-visible = false
-position = Vector2(0, -16)
-
-[connection signal="body_entered" from="chatzone" to="." method="_on_chatzone_body_entered"]
-[connection signal="body_exited" from="chatzone" to="." method="_on_chatzone_body_exited"]
+[node name="ChatZone" parent="." instance=ExtResource("3_b46kh")]
+position = Vector2(0, -2)
