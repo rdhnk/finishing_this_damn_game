@@ -188,8 +188,8 @@ func _physics_process(delta: float) -> void:
 		# Parachuting
 		activate_parachute()
 		
-		#if alive:
-		move_and_slide()
+		if alive:
+			move_and_slide()
 	
 func dying():
 	if !alive:
