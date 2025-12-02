@@ -35,11 +35,11 @@ var wall_touching_left : bool = false
 var wall_touching_right : bool = false
 
 # items
-var climb_boots : bool = false # for wall slide & wall climb
+var climb_boots : bool = true # for wall slide & wall climb
+var grappling_hook : bool = true # for grappling hook
+var parachute : bool = true # for parachute
+#var quick_hook : bool = false
 @onready var climbing_boots_sprite: Sprite2D = $Items/ClimbingBoots
-var grappling_hook : bool = false # for grappling hook
-var quick_hook : bool = false
-var parachute : bool = false # for parachute
 @onready var sfx_get_item: AudioStreamPlayer2D = $sfx/sfx_get_item
 
 # get grappling controller
