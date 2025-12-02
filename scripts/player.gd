@@ -58,6 +58,7 @@ var to_die : bool = false # if it's true, then dead is imminent
 var falldeath_threshold : float = 600.0
 @onready var death_time: Timer = $DeathTime # delay timer before restarting
 var can_move : bool = true # whether player can move or not
+@onready var respawn_label: Label = $RespawnLabel
 
 # Camera manipulation
 var look_direction : float = 0.0
@@ -187,13 +188,15 @@ func _physics_process(delta: float) -> void:
 		# Parachuting
 		activate_parachute()
 		
+		#if alive:
 		move_and_slide()
 	
 func dying():
 	if !alive:
 		print("ded")
 		player_sprite.play("dead")
-		velocity = Vector2.ZERO
+		respawn_label.visible = true
+		#velocity = Vector2.ZERO
 		#velocity.x = lerp(velocity.x, 0.0, DECELERATION)
 		if !sfx_die_played:	# Play the panic SFX just ONCE
 			sfx_die_played = true
@@ -205,6 +208,7 @@ func dying():
 			to_die = false
 			sfx_fall_played = false
 			sfx_die_played = false
+			respawn_label.visible = false
 			#get_tree().reload_current_scene()
 		#death_time.start()
 
