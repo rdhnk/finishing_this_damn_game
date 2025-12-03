@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b0y14vom6srcm"
+path="res://.godot/imported/shop_jordan.dialogue-a333709ab9b660213e6d7544a7e83f13.tres"
+
+[deps]
+
+source_file="res://dialogues/shop_jordan.dialogue"
+dest_files=["res://.godot/imported/shop_jordan.dialogue-a333709ab9b660213e6d7544a7e83f13.tres"]
+
+[params]
+
+defaults=true

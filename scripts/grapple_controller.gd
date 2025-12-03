@@ -32,7 +32,8 @@ func _physics_process(delta):
 		else:
 			point.self_modulate = Color(1, 1, 1, 1)	
 
-		if InputBuffer.is_action_press_buffered("move_grapple"): # Using custom InputBuffer. Hopefully make the grappling timing to be less frame-perfect
+		#if InputBuffer.is_action_press_buffered("move_grapple"): # Using custom InputBuffer. Hopefully make the grappling timing to be less frame-perfect
+		if Input.is_action_just_pressed("move_grapple"): # Using custom InputBuffer. Hopefully make the grappling timing to be less frame-perfect
 			print("grapple pressed")
 			launch()
 		if Input.is_action_just_released("move_grapple"):

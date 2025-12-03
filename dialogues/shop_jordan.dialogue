@@ -4,13 +4,17 @@
 Jordan: Congratulation for you to this stage of this mountain.
 Jordan: As a gift and my obligation, I have to give you a gear to help you reach the summit.
 Jordan: Here it is...
-Jordan: ... a grappling hook.
+set player.sfx_get_item.play()
+set player.hookgun_sprite.visible = true
+Jordan: ... a [color=gold]Grappling Hookgun[/color]. Yay.
+set player.grappling_hook = true
+set player.hookgun_sprite.visible = false
 Jordan: Now, as per requirement, I have to read you the manual.
 Jordan: Erhm.
 Jordan: "How to Use Pulsar's Hookgun (TM)"
 Jordan: "Imagine yourself having a point above your head,"
-Jordan: "that goes green when you think you shoot the hookgun."
-Jordan: "Once it goes green, press R1 or Shift button to shoot the hookgun."
+Jordan: "that goes [color=green]green[/color] when you think you shoot the hookgun."
+Jordan: "Once it goes [color=green]green[/color], press R1 or Shift button to shoot the hookgun."
 Jordan: "With it, you can now hang and swing on any surface, to anywhere else"
 Jordan: "Use it responsibly. Pulsar Inc is not responsible for any yadda yadda.."
 Jordan: You get the point.
@@ -23,7 +27,8 @@ Jordan: It's one of the three caves on the mountain.
 Jordan: Janaki, Landau, and Fellow cave.
 Jordan: The normal route is: Exit the cave to the east, and go upward.
 Jordan: Then, enter the Landau Cave to the west to reach Outpost 3.
-Jordan: ...Or maybe there's another route, but I don't know.
+Jordan: ...Or maybe there's another route, but I don't really know.
+Jordan: I'm just here. I'm not the climber anyway.
 => END
 
 ~ start3
@@ -33,6 +38,7 @@ Jordan: Not everyone have to be like Gauss.
 Jordan: That guy's weirdo.
 Jordan: I'm just here to make sure that everyone take this seriously.
 Jordan: It's still a dangerous hike.
+Jordan: So don't be overly optimistic. It'll kill you.
 => END
 
 ~ endloop

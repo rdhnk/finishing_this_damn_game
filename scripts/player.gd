@@ -35,11 +35,12 @@ var wall_touching_left : bool = false
 var wall_touching_right : bool = false
 
 # items
-var climb_boots : bool = true # for wall slide & wall climb
-var grappling_hook : bool = true # for grappling hook
-var parachute : bool = true # for parachute
+var climb_boots : bool = false # for wall slide & wall climb
+var grappling_hook : bool = false # for grappling hook
+var parachute : bool = false # for parachute
 #var quick_hook : bool = false
 @onready var climbing_boots_sprite: Sprite2D = $Items/ClimbingBoots
+@onready var hookgun_sprite: Sprite2D = $Items/Hookgun
 @onready var sfx_get_item: AudioStreamPlayer2D = $sfx/sfx_get_item
 
 # get grappling controller
@@ -82,6 +83,7 @@ var dialogue_hardy : int = 0
 var dialogue_conway : int = 0
 var has_meet_hardy : bool = 0
 var dialogue_shop_gauss : int = 0
+var dialogue_shop_jordan : int = 0
 
 func _physics_process(delta: float) -> void:
 	if can_move:
