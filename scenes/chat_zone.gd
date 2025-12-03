@@ -7,10 +7,11 @@ extends Area2D
 
 var current_npc_name : String # Get the NPC parent name. Very important
 var player_in_chatzone = false
-var chatzone_cam_y : float = 15 # Increase the cam height during interaction
+var chatzone_cam_y : float  # Increase the cam height during interaction
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	chatzone_cam_y = -player.ori_cam_y
 	chat_balloon.visible = false
 	DialogueManager.get_current_scene = func(): return get_node(".")
 	DialogueManager.dialogue_ended.connect(_on_dialogue_manager_dialogue_ended) # For checking if a dialogue ended
@@ -57,5 +58,5 @@ func _on_dialogue_manager_dialogue_ended(resource: DialogueResource) -> void:
 		chat_balloon.visible = true
 		player.can_move = true
 		player_cam.zoom = Vector2(4.0, 4.0)
-		player_cam.position.y = player.ori_cam_y
+		player_cam.position.y += player.ori_cam_y
 		print(player_cam.position.y)
