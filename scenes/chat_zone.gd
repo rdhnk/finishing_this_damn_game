@@ -7,7 +7,7 @@ extends Area2D
 
 var current_npc_name : String # Get the NPC parent name. Very important
 var player_in_chatzone = false
-var chatzone_cam_y : float = 20 # Increase the cam height during interaction
+var chatzone_cam_y : float = 10 # Increase the cam height during interaction
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
