@@ -67,7 +67,7 @@ var cam_pressed : bool = false
 var cam_hold_time := 0.0
 var cam_threshold := 0.6  # seconds
 var cam_y : float = 80
-var ori_cam_y : float = -20.0
+var ori_cam_y : float = -15.0
 
 # Sound effects
 @onready var sfx_jump := $sfx/sfx_jump
