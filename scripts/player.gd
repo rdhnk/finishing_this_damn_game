@@ -41,6 +41,7 @@ var parachute : bool = true # for parachute
 #var quick_hook : bool = false
 @onready var climbing_boots_sprite: Sprite2D = $Items/ClimbingBoots
 @onready var hookgun_sprite: Sprite2D = $Items/Hookgun
+@onready var parachute_small_sprite: Sprite2D = $Items/ParachuteSmall
 @onready var sfx_get_item: AudioStreamPlayer2D = $sfx/sfx_get_item
 
 # get grappling controller
@@ -84,6 +85,7 @@ var dialogue_conway : int = 0
 var has_meet_hardy : bool = 0
 var dialogue_shop_gauss : int = 0
 var dialogue_shop_jordan : int = 0
+var dialogue_shop_jacobi : int = 0
 
 func _physics_process(delta: float) -> void:
 	if can_move:

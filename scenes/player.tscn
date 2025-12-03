@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cxp8t622278qo"]
+[gd_scene load_steps=31 format=3 uid="uid://cxp8t622278qo"]
 
 [ext_resource type="Script" uid="uid://bn2yjlh0geano" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bhoy80o7lrw33" path="res://assets/fibo_player.png" id="3_fjrip"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dukd721qv6xu6" path="res://assets/parachute.png" id="10_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://yddtum8bt7t4" path="res://assets/hookgun.png" id="11_jej6c"]
 [ext_resource type="FontFile" uid="uid://cbb6fbmh2pllb" path="res://scenes/NPCs/dedicool.regular.ttf" id="12_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://jnv05ufrr2at" path="res://assets/parachute_small.png" id="13_f1ej7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("3_fjrip")
@@ -252,6 +253,12 @@ texture = ExtResource("11_jej6c")
 visible = false
 position = Vector2(0, -8)
 texture = ExtResource("10_y4r1p")
+
+[node name="ParachuteSmall" type="Sprite2D" parent="Items"]
+visible = false
+position = Vector2(0.178572, -11.75)
+scale = Vector2(1.92857, 1.92857)
+texture = ExtResource("13_f1ej7")
 
 [node name="RespawnLabel" type="Label" parent="."]
 visible = false

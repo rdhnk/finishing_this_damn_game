@@ -1,6 +1,6 @@
 ~ start
-???: Hello, and welcome to outpost 2.
-???: I'm Jordan, the keeper for this outpost.
+???: Hello, and welcome to the [color=light_sky_blue]second outpost[/color].
+???: I'm [color=orange]Jordan[/color], the keeper for this outpost.
 Jordan: Congratulation for you to this stage of this mountain.
 Jordan: As a gift and my obligation, I have to give you a gear to help you reach the summit.
 Jordan: Here it is...
@@ -26,7 +26,7 @@ Jordan: We are here in the Janaki Cave.
 Jordan: It's one of the three caves on the mountain.
 Jordan: Janaki, Landau, and Fellow cave.
 Jordan: The normal route is: Exit the cave to the east, and go upward.
-Jordan: Then, enter the Landau Cave to the west to reach Outpost 3.
+Jordan: Then, enter the Landau Cave to the west to reach the [color=light_sky_blue]third outpost[/color].
 Jordan: ...Or maybe there's another route, but I don't really know.
 Jordan: I'm just here. I'm not the climber anyway.
 => END
@@ -39,6 +39,7 @@ Jordan: That guy's weirdo.
 Jordan: I'm just here to make sure that everyone take this seriously.
 Jordan: It's still a dangerous hike.
 Jordan: So don't be overly optimistic. It'll kill you.
+Jordan: Stay safe out there.
 => END
 
 ~ endloop

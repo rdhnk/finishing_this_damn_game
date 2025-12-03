@@ -1,0 +1,43 @@
+~ start
+???: Ah, another climber?
+???: Welcome to the [color=light_sky_blue]third outpost[/color]. My name is [color=orange]Jacobi[/color].
+Jacobi: Congratulation for reaching this stage! Must be hard, yes?
+Jacobi: Well, to ease your journey, I have something important for you...
+set player.sfx_get_item.play()
+set player.parachute_small_sprite.visible = true
+Jacobi: ... a [color=gold]Parachute[/color]!
+set player.parachute = true
+set player.parachute_small_sprite.visible = false
+Jacobi: You know who made it?
+Jacobi: That's right, it's Pulsar! Same company who made that hookgun.
+Jacobi: That's a good trivia, don't you think?
+Jacobi: So here's the deal:
+Jacobi: To use it, press L1 or ctrl while in the air.
+Jacobi: With parachute, you can slow down and glide.
+Jacobi: Handy when you're falling and panicking.
+Jacobi: Makes you practically invincible.
+Jacobi: Pretty good, eh?
+=> END
+
+~ start2
+Jacobi: You're now halfway through Ramanujan.
+Jacobi: On the west side, there's Landau View.
+Jacobi: It's pretty famous, did you know that?
+Jacobi: You can try jump off & to use that [color=gold]Parachute[/color] for good.
+Jacobi: Believe or not, you can actually reach the [color=light_sky_blue]first outpost[/color] in that way.
+Jacobi: Can you do that? High possibly you can.
+=> END
+
+~ start3
+Jacobi: Hmm, what's that?
+Jacobi: I'm just a curious and like to ask question.
+Jacobi: Most climbers are interesting bunch.
+Jacobi: I can't help but to ask them questions.
+Jacobi: Like, did you know that you're a [color=indian_red]Srinivasan[/color]?
+Jacobi: Do you know that there are [color=indian_red]Srinivasans[/color] also currently climbing this mountain?
+Jacobi: See if you can find them!
+=> END
+
+~ endloop
+Jordan: Keep yourself safe, yeah?
+=> END

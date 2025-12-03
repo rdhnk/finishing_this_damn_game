@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce03icxgjs6ca"]
+
+[ext_resource type="Texture2D" uid="uid://cd7knu8bqxo7a" path="res://assets/NPC/shop_keeper.png" id="1_jhgvq"]
+[ext_resource type="Script" uid="uid://k34tbxpekrud" path="res://scripts/shop_jacobi.gd" id="2_jhgvq"]
+[ext_resource type="PackedScene" uid="uid://bhcucyqh5f3px" path="res://scenes/chat_zone.tscn" id="3_rdqre"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evbxy"]
+atlas = ExtResource("1_jhgvq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax8da"]
+atlas = ExtResource("1_jhgvq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47x6k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evbxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax8da")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="shop_jacobi" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_47x6k")
+autoplay = "default"
+script = ExtResource("2_jhgvq")
+
+[node name="ChatZone" parent="." instance=ExtResource("3_rdqre")]
+
+[editable path="ChatZone"]
