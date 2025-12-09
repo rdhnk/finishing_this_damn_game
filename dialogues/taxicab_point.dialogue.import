@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cyg8u0in7edep"
+path="res://.godot/imported/taxicab_point.dialogue-2e035ae0cd0e5c888bbbe7366a2888f4.tres"
+
+[deps]
+
+source_file="res://dialogues/taxicab_point.dialogue"
+dest_files=["res://.godot/imported/taxicab_point.dialogue-2e035ae0cd0e5c888bbbe7366a2888f4.tres"]
+
+[params]
+
+defaults=true

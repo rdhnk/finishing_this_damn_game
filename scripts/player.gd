@@ -35,9 +35,9 @@ var wall_touching_left : bool = false
 var wall_touching_right : bool = false
 
 # items
-var climb_boots : bool = true # for wall slide & wall climb
-var grappling_hook : bool = true # for grappling hook
-var parachute : bool = true # for parachute
+var climb_boots : bool = false # for wall slide & wall climb
+var grappling_hook : bool = false # for grappling hook
+var parachute : bool = false # for parachute
 #var quick_hook : bool = false
 @onready var climbing_boots_sprite: Sprite2D = $Items/ClimbingBoots
 @onready var hookgun_sprite: Sprite2D = $Items/Hookgun
@@ -88,6 +88,7 @@ var dialogue_shop_jordan : int = 0
 var dialogue_shop_jacobi : int = 0
 
 func _physics_process(delta: float) -> void:
+	restart_level()
 	if can_move:
 		dying() # at every moment, you have to ask yourself whether you're alive
 		
@@ -269,7 +270,11 @@ func cam_look(delta):
 	##alive = true
 	#get_tree().reload_current_scene()
 	#
+	
+func restart_level(): # For restarting level. This will do for now.
+	if Input.is_action_pressed("restart_level"):
+		get_tree().reload_current_scene()
 
-func _on_transit_to_1_body_entered(body: Node2D) -> void:
+func _on_transit_to_1_body_entered(body: Node2D) -> void: # Level transtion. Not being used right now
 	if body.name == "player":
 		get_tree().change_scene_to_file("res://scenes/level_1.tscn")
